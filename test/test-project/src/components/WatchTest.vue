@@ -53,7 +53,7 @@ import _ from 'lodash'
         console.log( this.count )
       },
       question (newQuestion, oldQuestion) {
-        this.answer = 'Waitiong for you to stop typing...'
+        this.answer = 'Waiting for you to stop typing...'
         this.debouncedGetAnswer()
       }
     }

@@ -18,7 +18,7 @@ var mixinsBox = {
   }
 }
 export default{
-  name: "MixinsTest",
+  name: 'MixinsTest',
   components: {MixinDatas},
   mixins: [mixinsBox, MixinDatas],
   data(){

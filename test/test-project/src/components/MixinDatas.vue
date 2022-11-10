@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-    name: "MixinDatas",
+    name: 'MixinDatas',
     data() {
         return {
             boxData1: 'good',
