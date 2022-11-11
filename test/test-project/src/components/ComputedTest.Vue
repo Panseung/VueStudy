@@ -37,9 +37,9 @@
           this.lastName = names[names.length - 1]
         }
       },
-      watchTarget() {
-        return [count, firstName]
-      }
+      // watchTarget() {
+      //   return [count, firstName]
+      // }
     }, 
     methods: {
       testName() {

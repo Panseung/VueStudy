@@ -22,17 +22,22 @@ import _ from 'lodash'
       return {
         question: '',
         answer: 'I cannot give you an answer until you ask a question!',
+        d: 0
       }
     },
     created() {
+    },
+    mounted() {
       this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
     },
     methods: {
-      test() {
-        this.count += 1
-      },
+      // debouncedGetAnswer(){}
       getAnswer() {
-        if (this.question.indexOf('?') === -1) {
+        setTimeout( () => {
+          console.log( 123 )
+        }, 1000 )
+
+        if (this.question.indexOf( '?' ) === -1) {
           this.answer = 'Questions usually contain a question mark. ;-)'
           return
         }
@@ -46,15 +51,13 @@ import _ from 'lodash'
           .catch((err) => {
             this.answer = 'Error! Could not reach the API. ' + err
           })
-      }
+      },
     },
     watch: {
-      count() {
-        console.log( this.count )
-      },
       question (newQuestion, oldQuestion) {
         this.answer = 'Waiting for you to stop typing...'
         this.debouncedGetAnswer()
+        // _.debounce(this.getAnswer, 5000)()
       }
     }
     

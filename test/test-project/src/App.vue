@@ -6,6 +6,11 @@
     <h3>when use component, using '-', start with lower</h3>
     <h3>$: for public instance properties</h3>
     <h3>_: for private instance properties</h3>
+    <br/>
+    <h3>for( let i = 0; i &gt; 10; i++ ) {</h3>
+    <h3>const arr = [ 1, 2, 3 ]</h3>
+    <h3>obj['asd']</h3>
+    <h3>}</h3>
     <h3></h3>
 
     <hr/>
@@ -35,9 +40,9 @@
     <hr/>
 
     <props-test
-      @propsTrue = "propsState=true"
-      @propsFalse = "propsState=false"
-      :propsState="propsState"
+      @propsTrue = "propsState = true"
+      @propsFalse = "propsState = false"
+      :propsState = "propsState"
       />
 
       <hr/>
@@ -77,6 +82,22 @@
       <hr/>
 
       <special-attributes/>
+
+      <hr/>
+
+      <button @click="lifeCycleShow">LifeCycle Component on/off</button>
+      <h4>lifecycleState: {{ lifeCycleState }}</h4>
+      <p>밑에 on/off버튼 비활성화를 통해 막으려 해도</p>
+      <p>component destroy자체를 막는것이 아니라 destroy 됐다가 다시 생김</p>
+      <lifecycle-test v-if="lifeCycleState" @cancelOff="lifeCycleState=true"/>
+
+      <hr/>
+      
+      <let-var/>
+
+      <hr/>
+
+      <curring-test/>
   </div>
 </template>
 
@@ -92,14 +113,32 @@ import PropsTest from './components/PropsTest'
 import SlotTest from './components/SlotTest'
 import DirectivesTest from './components/DirectivesTest'
 import SpecialAttributes from './components/SpecialAttributes'
+import LifecycleTest from './components/LifecycleTest'
+import letVar from './components/letVar'
+import CurringTest from './components/CurringTest'
 export default {
   name: 'App',
-  components: { WatchTest, ComputedTest, PromiseTest, MixinsTest, VforTest, ArrowTest, PropsTest, SlotTest, DirectivesTest, SpecialAttributes },
+  components: { 
+    WatchTest, 
+    ComputedTest,
+    PromiseTest,
+    MixinsTest,
+    VforTest, 
+    ArrowTest, 
+    PropsTest, 
+    SlotTest, 
+    DirectivesTest, 
+    SpecialAttributes, 
+    LifecycleTest,
+    letVar,
+    CurringTest
+  },
   mixins: [],
   data() {
      return {
-      propsState: true
-      } 
+      propsState: true,
+      lifeCycleState: true
+      }
   },
   computed: {
 
@@ -114,7 +153,9 @@ export default {
 
   },
   methods: {
-
+    lifeCycleShow() {
+      this.lifeCycleState = !this.lifeCycleState
+    }
   },
   watch: {
     propsState: () => {
