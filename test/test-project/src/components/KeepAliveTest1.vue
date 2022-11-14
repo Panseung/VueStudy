@@ -14,30 +14,30 @@ export default {
     }
   },
   beforeCreate() {
-    console.group('keepAlive1')
-    console.log('keepAlive1.beforeCreate')
+    console.group( 'keepAlive1' )
+    console.log( 'keepAlive1.beforeCreate' )
   },
   created() {
-    console.log('keepAlive1.created')
+    console.log( 'keepAlive1.created' )
   },
   beforeMount() {
-    console.log('keepAlive1.beforeMount')
+    console.log( 'keepAlive1.beforeMount' )
   },
   mounted() {
-    console.log('keepAlive1.mounted')
+    console.log( 'keepAlive1.mounted' )
   },
   beforeDestroy() {
-    console.log('keepAlive1.beforeDestroy')
+    console.log( 'keepAlive1.beforeDestroy' )
   },
   destroyed() {
-    console.log('keepAlive1.destroyed')
-    console.groupEnd('keepAlive1')
+    console.log( 'keepAlive1.destroyed' )
+    console.groupEnd( 'keepAlive1' )
   },
   activated() {
-    console.log('keepAlive1.activated')
+    console.log( 'keepAlive1.activated' )
   },
   deactivated() {
-    console.log('keepAlive1.deactivated')
+    console.log( 'keepAlive1.deactivated' )
   }
 
 }

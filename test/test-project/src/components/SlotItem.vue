@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  name: 'SlotTest',
+  name: 'SlotItem',
   data() {
     return {
 

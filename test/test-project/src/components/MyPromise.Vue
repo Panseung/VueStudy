@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Promise, Async&Await Test</h1>
+    <h1>Promise, Async&Await</h1>
     <h3>await을 쓰려면 Promise객체를</h3>
     <h3>리턴하는 함수를 써야한다.</h3>
     <h3>promiseAll은 하나라도 reject나면</h3>
@@ -12,7 +12,7 @@
 </template>
 <script>
   export default {
-    name: 'PromiseTest',
+    name: 'MyPromise',
     data() {
       return {
         
@@ -20,10 +20,10 @@
     },
     methods : {
       promiseTest :() => {
-        const myPromise = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve('2초 지남')
-          }, 2000);
+        const myPromise = new Promise( ( resolve, reject ) => {
+          setTimeout( () => {
+            resolve( '2초 지남' )
+          }, 2000 );
         })
         // const myPromise = () => {
         //   return new Promise((resolve, reject) => {
@@ -34,15 +34,15 @@
         // }
 
         myPromise
-          .then((res) => {
-            console.log(res)
+          .then( ( res ) => {
+            console.log( res )
             return 'next'
           })
-          .then((res) => {
-            console.log(res)
-            setTimeout(() => {
-              console.log('끝')
-            },2000)
+          .then( ( res ) => {
+            console.log( res )
+            setTimeout( () => {
+              console.log( '끝' )
+            }, 2000 ) 
           })
       },
       asyncTest : async() => {
@@ -65,8 +65,8 @@
 
         const twoSeconds = ( time ) => {
           return new Promise( ( resolve, reject ) => {
-            setTimeout(() => {
-              resolve(console.log( time * 0.001 + '초지남'))
+            setTimeout( () => {
+              resolve( console.log( time * 0.001 + '초지남' ) )
             }, time)
           } )
         }
@@ -75,25 +75,25 @@
         await twoSeconds( 3000 )
       },
       promiseAllTest : () => {
-        const promise1 = Promise.resolve(3);
+        const promise1 = Promise.resolve( 3 );
         const promise2 = 42;
-        const promise3 = new Promise((resolve, reject) => {
-          if (1) {
-            reject(20)
+        const promise3 = new Promise( ( resolve, reject ) => {
+          if ( 1 ) {
+            reject( 20 )
           }
-          resolve(444)
-        })
+          resolve( 444 )
+        } )
 
-        const promise4 = new Promise((resolve, reject) => {
-          if (1) {
-            reject(30)
+        const promise4 = new Promise( ( resolve, reject ) => {
+          if ( 1 ) {
+            reject( 30 )
           }
-          resolve(10)
-        })
-        Promise.all([promise1,promise2,promise3, promise4])
-        .then((res) => {
-          console.log(res)
-        })
+          resolve( 10 )
+        } )
+        Promise.all( [ promise1,promise2,promise3, promise4 ] )
+        .then( ( res ) => {
+          console.log( res )
+        } )
       }
     }
 

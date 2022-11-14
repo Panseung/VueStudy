@@ -23,8 +23,8 @@
 import IsTest1 from './IsTest1'
 import IsTest2 from './IsTest2'
 export default {
-  name: 'SpecialAttributes',
-  components: {IsTest1, IsTest2},
+  name: 'MySpecialAttributes',
+  components: { IsTest1, IsTest2 },
   data() {
     return {
       myModel:'',
@@ -34,13 +34,13 @@ export default {
   },
   methods: {
     inputRef() {
-      console.log(this.$refs.myInputRef._value)
+      console.log( this.$refs.myInputRef._value )
     },
     refTest() {
       this.$refs.myRef.innerText = this.myModel
     },
     isTest() {
-      if (this.componentState) {
+      if ( this.componentState ) {
         this.myComponent = 'is-test2'
         this.componentState = false
         this.$refs.isBtn.innerText = '컴포넌트 2로 바꾸기'

@@ -17,7 +17,7 @@
 import axios from 'axios'
 import _ from 'lodash'
   export default {
-    name: 'WatchTest',
+    name: 'MyWatch',
     data() {
       return {
         question: '',
@@ -37,24 +37,24 @@ import _ from 'lodash'
           console.log( 123 )
         }, 1000 )
 
-        if (this.question.indexOf( '?' ) === -1) {
+        if (this.question.indexOf( '?' ) === -1 ) {
           this.answer = 'Questions usually contain a question mark. ;-)'
           return
         }
         this.answer = 'Thinking...'
         // var vm = this (arrow function이 있기 때문에 필요 없음)
         // this를 변수에 넣어놓는 행위는 매우 지양할 것
-        axios.get('https://yesno.wtf/api')
-          .then((response) => {
-            this.answer = _.capitalize(response.data.answer)
-          })
-          .catch((err) => {
+        axios.get( 'https://yesno.wtf/api' )
+          .then( ( response ) => {
+            this.answer = _.capitalize( response.data.answer )
+          } )
+          .catch( ( err ) => {
             this.answer = 'Error! Could not reach the API. ' + err
-          })
+          } )
       },
     },
     watch: {
-      question (newQuestion, oldQuestion) {
+      question ( newQuestion, oldQuestion ) {
         this.answer = 'Waiting for you to stop typing...'
         this.debouncedGetAnswer()
         // _.debounce(this.getAnswer, 5000)()

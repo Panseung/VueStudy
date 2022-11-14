@@ -14,32 +14,31 @@ export default {
     }
   },
   beforeCreate() {
-    console.group('keepAlive2')
-    console.log('keepAlive2.beforeCreate')
+    console.group( 'keepAlive2' )
+    console.log( 'keepAlive2.beforeCreate' )
   },
   created() {
-    console.log('keepAlive2.created')
+    console.log( 'keepAlive2.created' )
   },
   beforeMount() {
-    console.log('keepAlive2.beforeMount')
+    console.log( 'keepAlive2.beforeMount' )
   },
   mounted() {
-    console.log('keepAlive2.mounted')
+    console.log( 'keepAlive2.mounted' )
   },
   beforeDestroy() {
-    console.log('keepAlive2.beforeDestroy')
+    console.log( 'keepAlive2.beforeDestroy' )
   },
   destroyed() {
-    console.log('keepAlive2.destroyed')
-    console.groupEnd('keepAlive2')
+    console.log( 'keepAlive2.destroyed' )
+    console.groupEnd( 'keepAlive2' )
   },
   activated() {
-    console.log('keepAlive2.activated')
+    console.log( 'keepAlive2.activated' )
   },
   deactivated() {
-    console.log('keepAlive2.deactivated')
+    console.log( 'keepAlive2.deactivated' )
   }
-
 }
 </script>
 <style>

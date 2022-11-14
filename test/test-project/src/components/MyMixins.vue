@@ -18,9 +18,9 @@ var mixinsBox = {
   }
 }
 export default{
-  name: 'MixinsTest',
-  components: {MixinDatas},
-  mixins: [mixinsBox, MixinDatas],
+  name: 'MyMixins',
+  components: { MixinDatas },
+  mixins: [ mixinsBox, MixinDatas ],
   data(){
     return {
       message : 'abcd',
@@ -28,7 +28,7 @@ export default{
     }
   },
   created() {
-    console.log(this.$data)
+    console.log( this.$data )
   }
 
 }

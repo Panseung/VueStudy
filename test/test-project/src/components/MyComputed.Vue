@@ -1,6 +1,6 @@
 <template>
   <div id="computed">
-    <h1>computed test</h1>
+    <h1>Computed</h1>
     <h2>like useMemo()</h2>
     <h3>함수처럼 정의하지만 변수로 사용</h3>
     <h3>구독한 변수가 업데이트 될 때 마다</h3>
@@ -14,7 +14,7 @@
 </template>
 <script>
   export default {
-    name: 'ComputedTest',
+    name: 'MyComputed',
     data() {
       return {
         count: 0,
@@ -31,7 +31,7 @@
         get() {
           return this.firstName + ' ' + this.lastName
         },
-        set (newValue) {
+        set ( newValue ) {
           var names = newValue.split(' ')
           this.firstName = names[0]
           this.lastName = names[names.length - 1]

@@ -18,24 +18,24 @@ export default {
     }
   },
   beforeCreate() {
-    console.group('child2')
-    console.log('child2.beforeCreate')
+    console.group( 'child2' )
+    console.log( 'child2.beforeCreate' )
   },
   created() {
-    console.log('child2.created')
+    console.log( 'child2.created' )
   },
   beforeMount() {
-    console.log('child2.beforeMonut')
+    console.log( 'child2.beforeMonut' )
   },
   mounted() {
-    console.log('child2.mounted')
-    console.groupEnd('child2')
+    console.log( 'child2.mounted' )
+    console.groupEnd( 'child2' )
   },
   beforeUpdate() {
-    console.log('child2.beforeupdated')
+    console.log( 'child2.beforeupdated' )
   },
   updated() {
-    console.log('child2.updated')
+    console.log( 'child2.updated' )
   }
 
 }

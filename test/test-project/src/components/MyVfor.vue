@@ -5,7 +5,7 @@
     <h3>2.x버전은 v-for가 더 높은 우선순위</h3>
     <h3>3.x버전은 v-if가 더 높은 우선순위</h3>
     <ul v-if="condition">
-      <li v-for="(todo, i) in todos" :key="i">
+      <li v-for="( todo, i ) in todos" :key="i">
         {{ todo }}, 인덱스: {{ i }}
       </li>
     </ul>
@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-  name: 'VforTest',
+  name: 'MyVfor',
   data() {
     return {
       todos: [

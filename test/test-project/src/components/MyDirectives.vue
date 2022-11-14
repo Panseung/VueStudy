@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Directives Test</h1>
+    <h1>Directives</h1>
     
     <br/>
 
@@ -44,7 +44,7 @@
 </template>
 <script>
 export default {
-  name: 'DirectivesTest',
+  name: 'MyDirectives',
   data() {
     return{
       msg: 'same',
@@ -54,13 +54,13 @@ export default {
     }
   },
   beforeCreate() {
-    setTimeout(() => {
+    setTimeout( () => {
 
     },1000)
   },
   methods: {
     changeMyMessage() {
-      console.log(this.myMessage)
+      console.log( this.myMessage )
       this.myMessage = '바뀜'
     }
   }

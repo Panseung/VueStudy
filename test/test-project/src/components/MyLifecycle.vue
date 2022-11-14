@@ -1,10 +1,7 @@
 <template>
   <div>
     
-    <h1>Lifecycle Test (console)</h1>
-
-    <button @click="cancelOnOffChange">on/off 버튼 비활성화</button>
-    <h3>{{ cancelOnOff }}</h3>
+    <h1>Lifecycle (console)</h1>
 
     <br/>
     <br/>
@@ -75,7 +72,7 @@ import LifecycleChild3 from './LifecycleChild3'
 import keepAliveTest1 from './KeepAliveTest1'
 import keepAliveTest2 from './KeepAliveTest2'
 export default {
-  name: 'LifecycleTest',
+  name: 'MyLifecycle',
   components: { 
     LifecycleChild,  
     LifecycleChild2,
@@ -95,16 +92,13 @@ export default {
   },
   methods: {
     mountTest() {
-      console.log('mounted Test: this func used in template before child component')
+      console.log( 'mounted Test: this func used in template before child component' )
     },
     dataChange () {
       this.testData++
     },
-    cancelOnOffChange() {
-      this.cancelOnOff = !this.cancelOnOff
-    },
     compoChange() {
-      if (this.btnState) {
+      if ( this.btnState ) {
         this.showComponent = 'keep-alive-test2'
         this.btnState = false
         this.$refs.btnRef.innerText = '컴포넌트 1로 바꾸기'
@@ -116,40 +110,40 @@ export default {
     },
   },
   beforeCreate() {
-    console.group('beforeCreate')
-    console.log('parent.beforeCreate')
-    console.log('data: ' + this.createData)
-    // console.trace('beforeCreate')
-    console.groupEnd('beforeCreate')
+    console.group( 'beforeCreate' )
+    console.log( 'parent.beforeCreate' )
+    console.log( 'data: ' + this.createData )
+    // console.trace( 'beforeCreate' )
+    console.groupEnd( 'beforeCreate' )
   },
   created() {
-    console.group('created')
-    console.log('parent.created')
-    console.log('data: ' + this.createData)
-    // console.trace('created')
-    console.groupEnd('created')
+    console.group( 'created' )
+    console.log( 'parent.created' )
+    console.log( 'data: ' + this.createData )
+    // console.trace( 'created' )
+    console.groupEnd( 'created' )
   },
   beforeMount() {
-    console.group('beforeMounted')
-    console.log('parent.beforeMount')
-    // console.trace('beforeMount')
-    console.groupEnd('beforeMount')
+    console.group( 'beforeMounted' )
+    console.log( 'parent.beforeMount' )
+    // console.trace( 'beforeMount' )
+    console.groupEnd( 'beforeMount' )
   },
   mounted() {
-    console.group('mounted')
-    console.log('parent.mounted')
-    // console.trace('mounted')
-    console.groupEnd('mounted')
+    console.group( 'mounted' )
+    console.log( 'parent.mounted' )
+    // console.trace( 'mounted' )
+    console.groupEnd( 'mounted' )
   },
   beforeUpdate() {
-    console.group('beforeUpate')
-    console.log('parent.beforeUpdate')
-    console.groupEnd('beforeUpate')
+    console.group( 'beforeUpate' )
+    console.log( 'parent.beforeUpdate' )
+    console.groupEnd( 'beforeUpate' )
   },
   updated() {
-    console.group('updated')
-    console.log('parent.updated')
-    console.groupEnd('updated')
+    console.group( 'updated' )
+    console.log( 'parent.updated' )
+    console.groupEnd( 'updated' )
   },
   activated() {
     // 자식컴포넌트에!
@@ -158,21 +152,20 @@ export default {
     // 자식컴포넌트에!
   },
   beforeDestroy() {
-    console.group('beforeDestroy')
-    console.log('parent.beforeDestroy')
-    if( this.cancelOnOff ) {this.$emit('cancelOff')}
-    // this.$emit('cancelOff')
-    console.groupEnd('beforeDestroy')
+    console.group( 'beforeDestroy' )
+    console.log( 'parent.beforeDestroy' )
+    if( this.cancelOnOff ) { this.$emit( 'cancelOff' ) }
+    console.groupEnd( 'beforeDestroy' )
   },
   destroyed() {
-    console.group('destroyed')
-    console.log('parent.destroyed')
-    console.groupEnd('destroyed')
+    console.group( 'destroyed' )
+    console.log( 'parent.destroyed' )
+    console.groupEnd( 'destroyed' )
   },
   errorCaptured() {
-    console.group('errorCaptured')
-    console.log('parent.errorCaptured')
-    console.groupEnd('errorCaptured')
+    console.group( 'errorCaptured' )
+    console.log( 'parent.errorCaptured' )
+    console.groupEnd( 'errorCaptured' )
   },
 }
 </script>
